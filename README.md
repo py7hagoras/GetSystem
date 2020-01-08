@@ -1,5 +1,5 @@
 # GetSystem
-This is a C# implementation of making a process/executable run as NT AUTHORITY/SYSTEM. This is achieved through parent ID spoofing of almost any SYSTEM process. Helps avoid the use of PSEXEC which is closely monitored.
+This is a C# implementation of making a process/executable run as NT AUTHORITY/SYSTEM. This is achieved through parent ID spoofing of almost any SYSTEM process. Helps avoid the use of PSEXEC which is closely monitored by Blue Team.
 
 # Usage: 
 
