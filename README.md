@@ -1,5 +1,5 @@
 # GetTrustedInstaller - Fork of py7hagoras/GetSystem
-This is a fork of py7hagoras/GetSystem repo that was modified to be able to make an executable run under NT SERVICE\TRUSTEDINSTALLER permissions by spawning it as a child of TrustedInstaller.exe. 
+This is a fork of py7hagoras/GetSystem repo that was modified to be able to make an executable run with NT SERVICE\TRUSTEDINSTALLER permissions by spawning it as a child of TrustedInstaller.exe under SYSTEM account.
 
 # Usage: 
 
