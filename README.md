@@ -7,7 +7,7 @@ GetTrustedInstaller.exe <absolute path of executable to run> <SYSTEM process to 
   
 GetTrustedInstaller.exe C:\Windows\System32\cmd.exe
 
-![Showing run of GetSystem to spawn cmd.exe as SYSTEM with lsass as parent](https://github.com/py7hagoras/GetSystem/raw/master/GetSystem.PNG)
+![Showing run of GetSystem to spawn cmd.exe as SYSTEM with lsass as parent](https://github.com/py7hagoras/GetSystem/raw/master/GetTrustedInstaller.PNG)
 
 
 
