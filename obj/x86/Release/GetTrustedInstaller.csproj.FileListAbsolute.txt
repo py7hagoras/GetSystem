@@ -1,0 +1,6 @@
+D:\GetTrustedInstaller\GetTrustedInstaller\bin\x86\Release\GetTrustedInstaller.exe.config
+D:\GetTrustedInstaller\GetTrustedInstaller\bin\x86\Release\GetTrustedInstaller.exe
+D:\GetTrustedInstaller\GetTrustedInstaller\bin\x86\Release\GetTrustedInstaller.pdb
+D:\GetTrustedInstaller\GetTrustedInstaller\obj\x86\Release\GetTrustedInstaller.csproj.CoreCompileInputs.cache
+D:\GetTrustedInstaller\GetTrustedInstaller\obj\x86\Release\GetTrustedInstaller.exe
+D:\GetTrustedInstaller\GetTrustedInstaller\obj\x86\Release\GetTrustedInstaller.pdb

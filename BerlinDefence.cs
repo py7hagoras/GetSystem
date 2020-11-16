@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace GetSystem
+namespace GetTrustedInstaller
 {
     class IamYourDaddy
     {
@@ -35,22 +35,14 @@ namespace GetSystem
 
         public static void Run(int parentProcessId, string binaryPath)
         {
-            // STARTUPINFOEX members
             const int PROC_THREAD_ATTRIBUTE_PARENT_PROCESS = 0x00020000;
 
-            // STARTUPINFO members (dwFlags and wShowWindow)
-            //const int STARTF_USESTDHANDLES = 0x00000100;
-            //const int STARTF_USESHOWWINDOW = 0x00000001;
-            //const short SW_HIDE = 0x0000;
-
-            // dwCreationFlags
             const uint EXTENDED_STARTUPINFO_PRESENT = 0x00080000;
             const uint CREATE_NEW_CONSOLE = 0x00000010;
 
             var pInfo = new PROCESS_INFORMATION();
             var siEx = new STARTUPINFOEX();
 
-            //siEx.StartupInfo.cb = Marshal.SizeOf(siEx);
             IntPtr lpValueProc = IntPtr.Zero;
             IntPtr hSourceProcessHandle = IntPtr.Zero;
             var lpSize = IntPtr.Zero;
@@ -66,14 +58,14 @@ namespace GetSystem
 
             UpdateProcThreadAttribute(siEx.lpAttributeList, 0, (IntPtr)PROC_THREAD_ATTRIBUTE_PARENT_PROCESS, lpValueProc, (IntPtr)IntPtr.Size, IntPtr.Zero, IntPtr.Zero);
 
-            //siEx.StartupInfo.dwFlags = STARTF_USESHOWWINDOW | STARTF_USESTDHANDLES;
-            //siEx.StartupInfo.wShowWindow = SW_HIDE;
-
             var ps = new SECURITY_ATTRIBUTES();
             var ts = new SECURITY_ATTRIBUTES();
             ps.nLength = Marshal.SizeOf(ps);
             ts.nLength = Marshal.SizeOf(ts);
-            bool ret = CreateProcess(binaryPath, null, ref ps, ref ts, true, EXTENDED_STARTUPINFO_PRESENT | CREATE_NEW_CONSOLE, IntPtr.Zero, null, ref siEx, out pInfo);
+
+            // lpCommandLine was used instead of lpApplicationName to allow for arguments to be passed
+            bool ret = CreateProcess(null, binaryPath, ref ps, ref ts, true, EXTENDED_STARTUPINFO_PRESENT | CREATE_NEW_CONSOLE, IntPtr.Zero, null, ref siEx, out pInfo);
+
             String stringPid = pInfo.dwProcessId.ToString();
                     
         }
