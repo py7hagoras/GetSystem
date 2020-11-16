@@ -3,11 +3,11 @@ This is a fork of py7hagoras/GetSystem repo that was modified to be able to make
 
 # Usage: 
 
-GetTrustedInstaller.exe <absolute path of executable to run> <SYSTEM process to spoof as parent>
+GetTrustedInstaller.exe <absolute path of executable to run + arguments>
   
-GetTrustedInstaller.exe C:\Windows\System32\cmd.exe
+GetTrustedInstaller.exe 'C:\Windows\System32\cmd.exe /k whoami'
 
-![Showing run of GetSystem to spawn cmd.exe as SYSTEM with lsass as parent](https://github.com/py7hagoras/GetSystem/raw/master/GetTrustedInstaller.PNG)
+![Showing run of GetTrustedInstaller to spawn cmd.exe with TrustedInstaller.exe as a Parent](https://github.com/rara64/GetTrustedInstaller/blob/master/GetTrustedInstaller.png)
 
 
 
