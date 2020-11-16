@@ -1,11 +1,11 @@
-# GetSystem
-This is a C# implementation of making a process/executable run as NT AUTHORITY/SYSTEM. This is achieved through parent ID spoofing of almost any SYSTEM process. Helps avoid the use of PSEXEC which is closely monitored by Blue Team.
+# GetTrustedInstaller - Fork of py7hagoras/GetSystem
+This is a fork of py7hagoras/GetSystem repo that was modified to be able to make a process/executable run under NT SERVICE\TRUSTEDINSTALLER permissions. 
 
 # Usage: 
 
-GetSystem.exe <absolute path of executable to run> <SYSTEM process to spoof as parent>
+GetTrustedInstaller.exe <absolute path of executable to run> <SYSTEM process to spoof as parent>
   
-GetSystem.exe C:\Windows\System32\cmd.exe lsass
+GetTrustedInstaller.exe C:\Windows\System32\cmd.exe
 
 ![Showing run of GetSystem to spawn cmd.exe as SYSTEM with lsass as parent](https://github.com/py7hagoras/GetSystem/raw/master/GetSystem.PNG)
 
